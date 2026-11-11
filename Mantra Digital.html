@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mantra Digital</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@500;800&family=Karla:wght@400;700&family=Reenie+Beanie&display=swap">
+<style>
+:root{--bg:#FBFAF8;--ink:#15103D;--gold:#FFB400;--mag:#E5006D;--line:#15103D;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15103D;--ink:#FFF1CC;--line:#FFF1CC}}
+:root[data-theme="dark"]{--bg:#15103D;--ink:#FFF1CC;--line:#FFF1CC}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font:400 18px/1.55 Karla,system-ui,sans-serif;overflow-x:hidden}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--mag);outline-offset:3px}
+.scrawl{font-family:"Reenie Beanie","Comic Sans MS",cursive;font-size:30px;line-height:1;color:var(--mag)}
+nav{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 16px;padding:12px 5vw;background:var(--gold);color:#15103D}
+.logo{display:flex;align-items:center;gap:8px;min-width:0;white-space:nowrap;text-decoration:none;font:800 clamp(18px,5vw,24px) Syne,sans-serif;letter-spacing:-.04em}
+.logo svg{flex:none;width:clamp(32px,9vw,44px);height:auto}
+nav a.m{flex:none;white-space:nowrap;font-weight:700;font-size:16px;border:2px solid #15103D;border-radius:99px;padding:8px 18px;min-height:44px;display:inline-flex;align-items:center;text-decoration:none}
+nav a.m:hover{background:#15103D;color:#FFB400}
+@media (max-width:420px){.hero p{font-size:19px}#bead{width:100%}section{padding:9vh 5vw}}
+.hero{background:var(--gold);color:#15103D;padding:3vh 5vw 8vh;border-bottom:4px solid #15103D}
+.chant{font:800 clamp(54px,15.5vw,230px)/.84 Syne,sans-serif;letter-spacing:-.05em;margin:0;text-transform:lowercase}
+.chant span{display:block}
+.chant span:nth-child(1){-webkit-text-stroke:2px #15103D;color:transparent;opacity:.45}
+.chant span:nth-child(2){-webkit-text-stroke:2px #15103D;color:transparent;opacity:.7}
+.chant span:nth-child(3){-webkit-text-stroke:2px #15103D;color:transparent}
+.hero .row{display:flex;flex-wrap:wrap;gap:24px 48px;align-items:flex-end;margin-top:30px}
+.hero p{max-width:30ch;margin:0;font-size:22px;line-height:1.35;font-weight:700}
+#bead{font:800 18px Syne,sans-serif;background:#15103D;color:#FFB400;border:0;border-radius:99px;padding:14px 26px;cursor:pointer}
+#bead:active{transform:scale(.96)}
+#msg{display:block;margin-top:10px;min-height:1.2em}
+section{padding:12vh 5vw}
+h2{font:800 clamp(34px,5.5vw,72px)/.98 Syne,sans-serif;letter-spacing:-.04em;margin:0 0 40px;max-width:16ch}
+.svc{border-top:2px solid var(--line)}
+.svc details{border-bottom:2px solid var(--line)}
+.svc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:20px 0;font:800 clamp(28px,5vw,60px)/1 Syne,sans-serif;letter-spacing:-.04em}
+.svc summary::-webkit-details-marker{display:none}
+.svc summary::after{content:"+";font-weight:500;color:var(--mag);transition:transform .2s}
+.svc details[open] summary::after{transform:rotate(45deg)}
+.svc summary:hover{color:var(--mag)}
+.svc p{margin:0 0 24px;max-width:52ch}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:6vw;align-items:start}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+.note{background:var(--mag);color:#fff;padding:34px;border-radius:4px 40px 4px 40px}
+.note p{margin:0 0 16px;font-size:20px}
+.note .scrawl{color:#FFE9A8;font-size:44px;margin:0}
+.how p{font-size:21px;max-width:46ch}
+footer{background:#15103D;color:#FFF1CC;padding:12vh 5vw 6vh}
+footer h2{max-width:13ch}
+footer a.big{font:800 clamp(22px,4.4vw,54px) Syne,sans-serif;letter-spacing:-.03em;color:#FFB400;overflow-wrap:anywhere}
+footer small{display:block;margin-top:60px;opacity:.7}
+.lbl{margin:0 0 12px;font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.chip{font:700 17px Karla,sans-serif;min-height:44px;padding:8px 20px;border-radius:99px;border:2px solid #FFB400;background:transparent;color:#FFB400;cursor:pointer;transition:background .15s,color .15s}
+.chip[aria-pressed="true"]{background:#FFB400;color:#15103D}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px 32px;max-width:760px;margin-bottom:32px}
+.fields label{display:block;font-weight:700;font-size:15px}
+.fields input{display:block;width:100%;margin-top:6px;padding:10px 0;font:400 20px Karla,sans-serif;color:#FFF1CC;background:transparent;border:0;border-bottom:2px solid #FFF1CC}
+.fields input::placeholder{color:#FFF1CC;opacity:.45}
+.fields input:focus{outline:none;border-bottom-color:#E5006D}
+.wa{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:14px 30px;background:#25D366;color:#15103D;border-radius:99px;font:800 20px Syne,sans-serif;text-decoration:none;box-shadow:0 0 0 0 rgba(37,211,102,.6);animation:pulse 2.4s infinite}
+.wa:hover{background:#4EE28A}
+@keyframes pulse{70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+.or{margin:22px 0 0;opacity:.85}
+@media (max-width:520px){.wa{width:100%}}
+@media (prefers-reduced-motion:reduce){.wa{animation:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="#top" aria-label="Mantra Digital home">
+    <svg width="44" height="44" viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="47" fill="#15103D"/>
+      <path d="M20 76V58a15 15 0 0 1 30 0v18M50 76V58a15 15 0 0 1 30 0v18" fill="none" stroke="#FFB400" stroke-width="11" stroke-linecap="butt"/>
+      <circle cx="50" cy="26" r="6.5" fill="#E5006D"/>
+    </svg>
+    mantra<span style="color:#E5006D">.</span>digital
+  </a>
+  <a class="m" href="mailto:hello@mantradigital.in">Write to us</a>
+</nav>
+
+<main id="top">
+<div class="hero">
+  <h1 class="chant" aria-label="Mantra, mantra, mantra, mantra Digital"><span aria-hidden="true">mantra</span><span aria-hidden="true">mantra</span><span aria-hidden="true">mantra</span><span>mantra</span></h1>
+  <div class="row">
+    <p>Say your brand enough times and people start to believe it. We do the saying: ads, posts, films, websites and software.</p>
+    <div>
+      <button id="bead" type="button">Chant it: 0 / 108</button>
+      <span id="msg" class="scrawl" aria-live="polite">go on, tap</span>
+    </div>
+  </div>
+</div>
+
+<section>
+  <h2>Things we do for money</h2>
+  <div class="svc">
+    <details open><summary>Marketing</summary><p>Instagram, Google and Meta ads, run by people who read the numbers every week. We tell you what is working and what is not.</p></details>
+    <details><summary>Content</summary><p>Reels, carousels, captions and scripts that sound like a person, not a press release. We plan the month and write all of it.</p></details>
+    <details><summary>Videography</summary><p>Brand films, product shoots, event coverage and short videos, shot and edited by us start to finish.</p></details>
+    <details><summary>Websites</summary><p>Built from a blank page for your business. No theme, no page-builder. Fast on a cheap phone and easy for you to update.</p></details>
+    <details><summary>Software</summary><p>Custom apps, dashboards and internal tools. If you are still running the business on spreadsheets and WhatsApp groups, talk to us.</p></details>
+  </div>
+</section>
+
+<section class="how">
+  <div class="two">
+    <div>
+      <h2>Why the name</h2>
+    </div>
+    <div>
+      <p>A mantra works by repetition. Brands do too. People do not remember the one great ad, they remember the brand they saw again and again and always recognised.</p>
+      <p>So we do not do one-off splashes. We help you show up, in the same voice, until you are the obvious choice.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="two">
+    <div class="note">
+      <p>I started Mantra Digital because most small brands get either boring work or expensive work. I want you to get work you would actually want to post yourself.</p>
+      <p class="scrawl">Shashank Tiwari</p>
+      <p style="margin:6px 0 0;font-size:16px">Founder</p>
+    </div>
+    <div>
+      <h2>A small studio, on purpose</h2>
+      <p>You will deal with the person who owns the company, not an account manager. Tell us what you sell and who you want to reach. We will reply with a plan, not a sales pitch.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p class="scrawl" style="color:#FFB400;font-size:38px;margin:0 0 6px">no forms, no waiting. just chat.</p>
+  <h2>Tell us what you are building.</h2>
+  <p class="lbl" id="lbl">What do you need?</p>
+  <div class="chips" role="group" aria-labelledby="lbl">
+    <button type="button" class="chip" aria-pressed="false">Marketing</button>
+    <button type="button" class="chip" aria-pressed="false">Content</button>
+    <button type="button" class="chip" aria-pressed="false">Videography</button>
+    <button type="button" class="chip" aria-pressed="false">Website</button>
+    <button type="button" class="chip" aria-pressed="false">Software</button>
+  </div>
+  <div class="fields">
+    <label>Your name<input id="nm" type="text" autocomplete="name" placeholder="Aarav"></label>
+    <label>One line about your idea<input id="ab" type="text" placeholder="A cafe launching next month"></label>
+  </div>
+  <a id="wa" class="wa" href="https://wa.me/919354384835" target="_blank" rel="noopener"><svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3C9 3 3.4 8.6 3.4 15.5c0 2.3.6 4.4 1.7 6.3L3 29l7.4-2c1.8 1 3.800 1.500 5.600 1.500 7 0 12.600-5.600 12.600-12.500S23 3 16 3zm0 22.800c-1.800 0-3.500-.5-5-1.400l-.4-.2-4.400 1.200 1.200-4.300-.3-.4a10 10 0 0 1-1.500-5.300C5.600 9.900 10.300 5.300 16 5.300s10.400 4.600 10.400 10.200S21.700 25.800 16 25.800zm5.700-7.500c-.3-.2-1.900-.9-2.200-1s-.5-.2-.7.200-.8 1-1 1.200-.4.200-.7.100a8.500 8.500 0 0 1-4.200-3.700c-.3-.6.300-.5.900-1.700.1-.2 0-.4 0-.5l-1-2.300c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.100-.9.400s-1.200 1.200-1.200 2.800 1.200 3.300 1.400 3.500 2.400 3.700 5.900 5.200c2.200.9 3 .9 4 .8.600-.1 1.900-.8 2.200-1.500s.3-1.400.2-1.500-.3-.2-.6-.4z"/></svg>Chat on WhatsApp</a>
+  <small>© 2026 Mantra Digital. Founder: Shashank Tiwari.</small>
+</footer>
+
+<script>
+(function(){
+  var n=0,b=document.getElementById('bead'),m=document.getElementById('msg');
+  var lines={1:'again',10:'keep going',30:'you are getting good at this',60:'halfway-ish',90:'almost',108:'done. that is how repetition works. now email us.'};
+  b.addEventListener('click',function(){
+    if(n<108){n++;}
+    b.textContent=n>=108?'Chanted 108 / 108':'Chant it: '+n+' / 108';
+    if(lines[n])m.textContent=lines[n];
+  });
+})();
+</script>
+<script>
+(function(){
+  var wa=document.getElementById('wa'),nm=document.getElementById('nm'),ab=document.getElementById('ab'),chips=document.querySelectorAll('.chip');
+  function upd(){
+    var sel=[].filter.call(chips,function(c){return c.getAttribute('aria-pressed')==='true'}).map(function(c){return c.textContent});
+    var t='Hi Mantra Digital! ';
+    if(nm.value.trim())t+='I am '+nm.value.trim()+'. ';
+    if(sel.length)t+='I need help with: '+sel.join(', ')+'. ';
+    if(ab.value.trim())t+='About my project: '+ab.value.trim();
+    wa.href='https://wa.me/919354384835?text='+encodeURIComponent(t.trim());
+  }
+  chips.forEach(function(c){c.addEventListener('click',function(){c.setAttribute('aria-pressed',c.getAttribute('aria-pressed')==='true'?'false':'true');upd();});});
+  nm.addEventListener('input',upd);ab.addEventListener('input',upd);upd();
+})();
+</script>
+</body>
+</html>
